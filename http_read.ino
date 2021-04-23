@@ -33,19 +33,17 @@ if(WiFi.status() == WL_CONNECTED)
       Serial.println(mydata);
       if(mydata=="1")
       {
-        Serial.println("Data received");
+        Serial.println("Char Data received");
       }
-//      int a=mydata.toInt();
-//      if(a==100)
-//      {
-//        Serial.println("100 Data received");
-//      }
-//          
+      int a=mydata.toInt();
+      if(a==1)
+      {
+        Serial.println("Int Data received");
+      }   
     }
     else
     {
       Serial.printf("[HTTP] GET Failed, Error:%d",httpcode);
-      
     }
     http.end();
   delay(5000);
